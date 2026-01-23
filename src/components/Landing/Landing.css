@@ -1,0 +1,38 @@
+.landing {
+  height: 100vh;
+  background: url("../../Assets/task.jpeg") center/cover no-repeat;
+  position: relative;
+}
+
+.landing::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.65);
+}
+
+.landing-content {
+  position: relative;
+  z-index: 1;
+  color: white;
+  text-align: center;
+  top: 40%;
+}
+
+.landing-content h1 {
+  font-size: 52px;
+}
+
+.landing-content p {
+  margin: 15px 0;
+  font-size: 18px;
+}
+
+.cta-btn {
+  padding: 14px 35px;
+  background: red;
+  color: white;
+  border-radius: 8px;
+  text-decoration: none;
+  font-size: 16px;
+}

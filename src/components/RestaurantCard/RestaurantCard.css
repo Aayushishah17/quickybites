@@ -1,0 +1,41 @@
+.res-card {
+  width: 260px;
+  background: #fff;
+  border-radius: 12px;
+  padding: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.res-card:hover {
+  transform: scale(1.05);
+}
+
+.res-img {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.cuisines {
+  color: gray;
+  font-size: 14px;
+}
+
+.area {
+  font-size: 13px;
+  color: #555;
+}
+
+.rating-cost {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+
+.rating {
+  color: green;
+  font-weight: bold;
+}
