@@ -77,3 +77,40 @@
   overflow: hidden;
   text-overflow: ellipsis;
 }
+
+.cart-link {
+  text-decoration: none;
+  color: inherit;
+}
+
+.cart-icon {
+  position: relative;
+  font-size: 22px;
+  cursor: pointer;
+  padding: 6px 10px;
+  border-radius: 50%;
+  transition: background 0.25s ease, transform 0.2s ease;
+}
+
+.cart-icon:hover {
+  background: #eef2ff;
+  transform: translateY(-1px);
+}
+
+/* Badge */
+.cart-badge {
+  position: absolute;
+  top: -4px;
+  right: -2px;
+  background: #ef4444;
+  color: #ffffff;
+  font-size: 11px;
+  font-weight: 600;
+  min-width: 18px;
+  height: 18px;
+  padding: 0 5px;
+  border-radius: 999px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

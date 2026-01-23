@@ -10,11 +10,10 @@ import { useSelector } from "react-redux";
 const Menu = () => {
   // const [menuData, setMenuData] = useState([]);
   const { id } = useParams();
-  console.log("id : " , id);
+  console.log("id : ", id);
   const foods = MenuList[id] || [];
   const dispatch = useDispatch();
-  const items = useSelector(store => store.restaurant.items);
-
+  const items = useSelector((store) => store.restaurant.items);
 
   // console.log("menuData : " , menuData)
 
@@ -37,33 +36,32 @@ const Menu = () => {
   // },[])
 
   const handleAddItem = (food) => {
-      dispatch(addItems(food));
-  }
+    dispatch(addItems(food));
+  };
 
   return (
     <div className="menu-page">
-      <div>
+      <div className="menu-header">
         <h2>Food Menu</h2>
-        <span>cartItems : {items?.length || 0} </span>
+        <span className="cart-count">🛒 {items?.length || 0}</span>
       </div>
+
       <div className="menu-grid">
         {foods.map((food) => (
           <div key={food.id} className="food-card">
             {/* IMAGE */}
-            <img
-              src={food.image}
-              alt={food.name}
-              className="food-img"
-            />
+            <img src={food.image} alt={food.name} className="food-img" />
 
             {/* NAME */}
             <h4>{food.name}</h4>
 
             {/* PRICE */}
             <p className="price">₹{food.price}</p>
-          
+
             {/* PLUS ICON */}
-            <div onClick={() => handleAddItem(food)} className="plus-icon">+</div>
+            <div onClick={() => handleAddItem(food)} className="plus-icon">
+              +
+            </div>
           </div>
         ))}
       </div>
