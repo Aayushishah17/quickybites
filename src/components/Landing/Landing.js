@@ -6,7 +6,7 @@ import "./Landing.css";
 const Landing = () => {
   return (
     <div className="landing">
-      <Navbar />
+      {/* <Navbar /> */}
 
       <div className="landing-content">
         <h1>Delicious food delivered fast</h1>

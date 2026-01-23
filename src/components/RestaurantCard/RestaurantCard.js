@@ -1,9 +1,7 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import "./RestaurantCard.css";
-
-const IMG_CDN =
-  "https://media-assets.swiggy.com/swiggy/image/upload/";
+const IMG_CDN_URL = "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/";
 
 const RestaurantCard = ({ data }) => {
   const navigate = useNavigate();
@@ -14,7 +12,7 @@ const RestaurantCard = ({ data }) => {
       onClick={() => navigate(`/menu/${data.id}`)}
     >
       <img
-        src={IMG_CDN + data.ImageId}
+        src={IMG_CDN_URL + data.ImageId}
         alt={data.name}
         className="res-img"
       />

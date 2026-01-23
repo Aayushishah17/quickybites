@@ -1,13 +1,33 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, replace } from "react-router-dom";
 import "./register.css";
+import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 function Register() {
-//   const [role, setRole] = useState("buyer");
+   const [username , setUserName] = useState("");
+   const [emailId , setEmail] = useState("");
+   const [password , setPassword] = useState("");
+   const navigate = useNavigate();
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    alert("Registered successfully (connect backend later)");
+  const handleSubmit = async() => {
+       setUserName("")
+       setEmail("")
+       setPassword("")
+       try{
+        const data = await axios.post("http://localhost:5000/api/v1/auth/signup",{
+        username : username,
+        emailId : emailId,
+        password : password
+        })
+
+       console.log("data : ",data.data);
+       if(data && data.data?.success){
+           navigate("/login");
+       }
+       }catch(err){
+          console.log(err);
+       }
   };
 
   return (
@@ -26,37 +46,16 @@ function Register() {
           <h2>Create Account</h2>
 
           <label>Name</label>
-          <input type="text" placeholder="Enter your name" />
+          <input value={username} onChange={(e)=> setUserName(e.target.value)} type="text" placeholder="Enter your name" />
 
           <label>Email</label>
-          <input type="email" placeholder="Enter your email" />
+          <input value={emailId} onChange={(e)=> setEmail(e.target.value)} type="email" placeholder="Enter your email" />
 
           <label>Password</label>
-          <input type="password" placeholder="Enter password" />
+          <input value={password} onChange={(e)=> setPassword(e.target.value)} type="password" placeholder="Enter password" />
 
           <label className="signing-label">Signing As</label>
-          {/* <div className="radio-group">
-            <label>
-              <input
-                type="radio"
-                name="role"
-                checked={role === "buyer"}
-                onChange={() => setRole("buyer")}
-              />
-              Buyer
-            </label>
-
-            <label>
-              <input
-                type="radio"
-                name="role"
-                checked={role === "supplier"}
-                onChange={() => setRole("supplier")}
-              />
-              Supplier
-            </label>
-          </div> */}
-
+  
           <button className="signup-btn" onClick={handleSubmit}>
             SIGN UP
           </button>
