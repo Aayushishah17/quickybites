@@ -31,7 +31,7 @@ const HomeNavbar = ({searchText , setSearchText}) => {
       </div>
 
       <div className="nav-right">
-        <div className="profile-icon">👤 <span>{user?.username}</span></div>
+        <div className="profile-icon">👤 <span className="user-name">{user?.username}</span></div>
         <button onClick={handleLogout}>Logout</button>
         <Link to={"/checkout"}><span>cartItems : {items?.length}</span></Link>
       </div>
