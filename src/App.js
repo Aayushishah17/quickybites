@@ -17,21 +17,16 @@ function App() {
     <BrowserRouter>
       <Routes>
         <Route path="/" element={
-          <ProtectedRoute>
+        
           <Landing />
-          </ProtectedRoute>
           } />
         <Route path="/home" element={
-          <ProtectedRoute>
           <Home />
-          </ProtectedRoute>
           } 
           />
 
         <Route path="/menu/:id" element={
-          <ProtectedRoute>
           <Menu />
-          </ProtectedRoute>
           } 
           />
 
@@ -40,15 +35,11 @@ function App() {
           } />
         <Route path="/register" element={<Register />} />
         <Route path="/dashboard" element={
-          <ProtectedRoute>
           <Dashboard />
-          </ProtectedRoute>
           } />
 
           <Route path="/checkout" element={
-          <ProtectedRoute>
          <CartItems/>
-          </ProtectedRoute>
           } 
           />
       </Routes>
